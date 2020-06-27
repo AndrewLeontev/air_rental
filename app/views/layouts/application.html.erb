@@ -12,11 +12,9 @@
 
   <body>
     <%= render partial: 'shared/navbar' %>
+    <%= render partial: 'shared/message' %>
 
     <div class="container" role="main">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-
       <%= yield %>
     </div>
   </body>

@@ -16,6 +16,10 @@ var jQuery = require("jquery");
 global.$ = global.jQuery = jQuery;
 window.$ = window.jQuery = jQuery;
 
+global.toastr = require("toastr")
+toastr.options.progressBar = true;
+toastr.options.positionClass = 'toast-top-full-width';
+
 require("bootstrap");
 require('packs/main.js')
 

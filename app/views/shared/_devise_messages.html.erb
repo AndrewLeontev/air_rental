@@ -1,0 +1,8 @@
+<% unless resource.errors.empty? %>
+  <script type="text/javascript" charset="utf-8">
+    <% resource.errors.full_messages.each do |value| %>
+      toastr.options.positionClass = 'toast-top-full-width';
+      toastr.error('<%= value %>')
+    <% end %>
+  </script>
+<% end %>
