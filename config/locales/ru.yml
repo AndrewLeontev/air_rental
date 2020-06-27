@@ -1,0 +1,9 @@
+ru:
+  label_login: 'Логин'
+  label_registration: 'Зарегистрироваться'
+  label_user_edit: 'Профиль'
+  label_user_logout: 'Выйти'
+  label_manage_listings: 'Мои объявления'
+  label_list_user_space: 'Сдать свое жилье'
+  label_user_reservations: 'Бронирование'
+  label_user_trips: 'Поездки'

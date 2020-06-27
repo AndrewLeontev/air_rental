@@ -1,0 +1,9 @@
+en:
+  label_login: 'Login'
+  label_registration: 'Sign Up'
+  label_user_edit: 'Edit Profile'
+  label_user_logout: 'Log out'
+  label_manage_listings: 'Manage Listings'
+  label_list_user_space: 'List Your Space'
+  label_user_reservations: 'Your Reservations'
+  label_user_trips: 'Your Trips'
