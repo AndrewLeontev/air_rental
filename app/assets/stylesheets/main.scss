@@ -13,6 +13,7 @@
 .avatar_full {
   width: 100%;
 }
-#toast-container.toast-bottom-full-width > div {
-  width: 100%!important;
+
+.toast-top-full-width {
+  margin-top: 60px !important;
 }

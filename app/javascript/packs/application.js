@@ -18,6 +18,7 @@ window.$ = window.jQuery = jQuery;
 
 global.toastr = require("toastr")
 toastr.options.progressBar = true;
+toastr.options.closeButton = true;
 toastr.options.positionClass = 'toast-top-full-width';
 
 require("bootstrap");
