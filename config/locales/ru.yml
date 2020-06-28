@@ -55,3 +55,6 @@ ru:
   label_is_air: "Кондиционер"
   label_save_successful: 'Успешно сохранено'
   label_save_unsuccessful: "Упс! Что-то пошло не так."
+  alert_dont_have_permissions: 'У вас недостаточно прав на это'
+  label_select_photo: 'Выбрать фотографии'
+  label_add_photos: 'Добавить фотографии'

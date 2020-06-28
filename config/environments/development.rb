@@ -72,12 +72,15 @@ Rails.application.configure do
     password: ENV["MAILER_PASSWORD"]
   }
 
-  # config.action_mailer.smtp_settings = {
-  #   address: 'smtp.gmail.com',
-  #   port: 587,
-  #   enable_starttls_auto: true,
-  #   authentication: 'login',
-  #   user_name: ENV["MAILER_EMAIL"],
-  #   password: ENV["MAILER_PASSWORD"]
-  # }
+  config.paperclip_defaults = {
+    storage: :s3,
+    path: ':class/:attachment/:id/:style/:filename',
+    s3_host_name: 's3-ap-northeast-2.amazonaws.com',
+    s3_credentials: {
+      bucket: 'airrental',
+      access_key_id: ENV['AWS_KEY'],
+      secret_access_key: ENV['AWS_SECRET'],
+      s3_region: 'ap-northeast-2'
+    }
+  }
 end

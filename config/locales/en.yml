@@ -53,3 +53,6 @@ en:
   label_is_air: "Air"
   label_save_successful: 'Saved Successful'
   label_save_unsuccessful: "Something went wrong..."
+  alert_dont_have_permissions: "You don't have permission"
+  label_select_photo: 'Select Photos'
+  label_add_photos: 'Add Photos'

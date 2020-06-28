@@ -32,13 +32,13 @@
     <div class="col-md-6 select">
       <div class="form-group">
         <label for="room_bathrooms"><%= t(:label_bathrooms) %></label>
-        <%= f.select :bath_room, options_for_select([["1", 1], ["2", 2], ["3", 3], ["4+", 4]], @room.bed_room), prompt: '...', class: 'form-control' %>
+        <%= f.select :bath_room, options_for_select([["1", 1], ["2", 2], ["3", 3], ["4+", 4]], @room.bath_room), prompt: '...', class: 'form-control' %>
       </div>
     </div>
 
   </div>
 
-  <div>
+  <div class="text-center">
     <% if action_name == 'listing' %>
       <%= button_tag fa_icon('far fa-save', t(:label_save)), type: :submit, class: 'btn btn-form' %>
     <% else %>
