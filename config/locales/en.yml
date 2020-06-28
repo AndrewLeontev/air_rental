@@ -30,3 +30,26 @@ en:
   label_description: 'Description'
   label_my_profile: 'My Profile'
   label_view_my_profile: 'View My Profile'
+  label_create_room: 'Create My Room'
+  label_bathrooms: 'Bathrooms'
+  label_bedrooms: 'Bedrooms'
+  label_accommodate: 'Accommodate'
+  label_home_type: 'Home Type'
+  label_room_type: 'Room Type'
+  label_create_room_title: 'Create your place'
+  label_listing: 'Listing'
+  label_pricing: 'Price'
+  label_photo_upload: 'Photo'
+  label_amenities: 'Amenities'
+  label_location: 'Location'
+  label_save: 'Save'
+  label_address: 'Address'
+  label_summary: 'Summary'
+  label_listing_name: 'Listing Name'
+  label_is_tv: 'TV'
+  label_is_kitchen: "Kitchen"
+  label_is_internet: "Internet"
+  label_is_heating: "Heating"
+  label_is_air: "Air"
+  label_save_successful: 'Saved Successful'
+  label_save_unsuccessful: "Something went wrong..."

@@ -1,0 +1,49 @@
+<%= form_for @room do |f|  %>
+
+  <div class="row">
+    <div class="col-md-6 select">
+      <div class="form-group">
+        <label for="room_home_type"><%= t(:label_home_type) %></label>
+        <%= f.select :home_type, options_for_select([["Apartment", "Apartment"], ["House", "House"], ["Bed & Breakfast", "Bed & Breakfast"]], @room.home_type), prompt: '...', class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="col-md-6 select">
+      <div class="form-group">
+        <label for="room_room_type"><%= t(:label_room_type) %></label>
+        <%= f.select :room_type, options_for_select([["Entire", "Entire"], ["Private", "Private"], ["Shared", "Shared"]], @room.room_type), prompt: '...', class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="col-md-6 select">
+      <div class="form-group">
+        <label for="room_accommodate"><%= t(:label_accommodate) %></label>
+        <%= f.select :accommodate, options_for_select([["1", 1], ["2", 2], ["3", 3], ["4+", 4]], @room.accommodate), prompt: '...', class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="col-md-6 select">
+      <div class="form-group">
+        <label for="room_bedrooms"><%= t(:label_bedrooms) %></label>
+        <%= f.select :bed_room, options_for_select([["1", 1], ["2", 2], ["3", 3], ["4+", 4]], @room.bed_room), prompt: '...', class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="col-md-6 select">
+      <div class="form-group">
+        <label for="room_bathrooms"><%= t(:label_bathrooms) %></label>
+        <%= f.select :bath_room, options_for_select([["1", 1], ["2", 2], ["3", 3], ["4+", 4]], @room.bed_room), prompt: '...', class: 'form-control' %>
+      </div>
+    </div>
+
+  </div>
+
+  <div>
+    <% if action_name == 'listing' %>
+      <%= button_tag fa_icon('far fa-save', t(:label_save)), type: :submit, class: 'btn btn-form' %>
+    <% else %>
+      <%= button_tag fa_icon('fa fa-plus', t(:label_create_room)), type: :submit, class: 'btn btn-normal' %>
+    <% end %>
+  </div>
+
+<% end %>

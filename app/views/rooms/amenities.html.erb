@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-md-3">
+    <%= render partial: 'room_menu' %>
+  </div>
+  <div class="col-md-9">
+    <div class="card">
+      <div class="card-header">
+        <%= t(:label_amenities) %>
+      </div>
+      <div class="card-body">
+        <div class="container">
+          <%= form_for @room do |f| %>
+
+            <div class="row form-group">
+              <div class="col-md-4">
+                <%= f.check_box :is_tv %> <label for="room_is_tv"><%= t(:label_is_tv) %></label>
+              </div>
+              <div class="col-md-4">
+                <%= f.check_box :is_kitchen %> <label for="room_is_kitchen"><%= t(:label_is_kitchen) %></label>
+              </div>
+              <div class="col-md-4">
+                <%= f.check_box :is_internet %> <label for="room_is_internet"><%= t(:label_is_internet) %></label>
+              </div>
+            </div>
+
+            <div class="row form-group">
+              <div class="col-md-4">
+                <%= f.check_box :is_heating %> <label for="room_is_heating"><%= t(:label_is_heating) %></label>
+              </div>
+
+              <div class="col-md-4">
+                <%= f.check_box :is_air %> <label for="room_is_air"><%= t(:label_is_air) %></label>
+              </div>
+            </div>
+
+            <br><br>
+            <div class="text-center">
+              <%= button_tag fa_icon('far fa-save', t(:label_save)), class: 'btn btn-form' %>
+            </div>
+
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

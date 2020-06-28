@@ -32,3 +32,26 @@ ru:
   label_description: 'Описание'
   label_my_profile: 'Mой профиль'
   label_view_my_profile: 'Посмотерть мой профиль'
+  label_create_room: 'Создать жилье'
+  label_bathrooms: 'Ванных комнат'
+  label_bedrooms: 'Спален'
+  label_accommodate: 'Гости'
+  label_home_type: 'Основной тип'
+  label_room_type: 'Тип жилья'
+  label_create_room_title: 'Создание жилья'
+  label_listing: 'Основные'
+  label_pricing: 'Цена'
+  label_photo_upload: 'Фотограффии'
+  label_amenities: 'Услуги'
+  label_location: 'Местоположение'
+  label_save: 'Сохранить'
+  label_address: 'Адресс'
+  label_summary: 'Краткое пояснение'
+  label_listing_name: 'Название'
+  label_is_tv: 'Телевидение'
+  label_is_kitchen: "Кухня"
+  label_is_internet: "Интернет"
+  label_is_heating: "Обогреватель"
+  label_is_air: "Кондиционер"
+  label_save_successful: 'Успешно сохранено'
+  label_save_unsuccessful: "Упс! Что-то пошло не так."

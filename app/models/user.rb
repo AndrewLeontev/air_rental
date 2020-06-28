@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   validates :fname, :lname, presence:true, length: { minimum: 3, maximum: 50 }
 
+  has_many :rooms
+
   def fullname
     "#{self.lname} #{self.fname}"
   end

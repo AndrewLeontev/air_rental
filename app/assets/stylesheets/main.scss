@@ -77,7 +77,7 @@ a {
   background-color: #00A699;
 }
 
-.btn.btn-form:active {
+.btn.btn-form:active, .btn.btn-form:hover {
   outline: none;
   border-color: #066165;
   background-color: #066165;
@@ -151,11 +151,56 @@ a {
 
 .form-group {
   margin-bottom: 25px;
+  width: 100%;
+}
+
+.form-group label {
+  font-weight: bold;
 }
 
 .form-control {
   border-radius: 2px;
-  height: 4rem;
+}
+
+.form-group input {
+  height: 45px;
+  border: 1px solid #00A699;
+}
+
+.form-group textarea {
+  border: 1px solid #00A699;
+}
+
+.form-group select {
+  width: 100%;
+  color: #565a5c;
+  background-color: white;
+  border: 1px solid #00A699;
+  border-radius: 2px;
+  padding: 5px;
+  appearance: none;
+  -moz-appearance: none; /* Firefox */
+  -webkit-appearance: none; /* Safari & Chrome */
+}
+
+.select:before {
+  content: '\25bc';
+  font-size: 1.2em;
+  position: absolute;
+  color: #00A699;
+  top: 35px;
+  right: 30px;
+  transform: scale(0.94, 0.62);
+}
+
+.form-group input[type="checkbox"] {
+  height: 1.25em;
+  width: 1.25em;
+  margin-bottom: -0.25em;
+  margin-right: 5px;
+  vertical-align: top;
+  border: 1px solid #00A699;
+  border-radius: 2px;
 }
 
 .sidebar-list {
@@ -182,5 +227,24 @@ a {
 .active.sidebar-link {
   color: #565A5C;
   font-weight: bold;
+  text-decoration: none;
+  padding: 5px 20px 5px 15px;
+}
+
+li.current  {
+  transition: background-color .3s;
+  transition: background-color .3s;
+  background-color: #e7f3ff;
+}
+.sidebar-item:hover {
+  background-color: #c1d4e8;
+}
+
+.sidebar-list li {
+  cursor: pointer;
+}
+
+.sidebar-list li > a {
+  display: block;
   text-decoration: none;
 }
