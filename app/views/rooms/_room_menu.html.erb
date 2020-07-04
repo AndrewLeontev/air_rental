@@ -1,20 +1,30 @@
 <ul class="sidebar-list">
   <li class="sidebar-item<%= ' current' if action_name == 'listing' %>">
-    <%= link_to t(:label_listing), listing_room_path, class: "sidebar-link active" %>
+    <%= link_to fa_icon('fa fa-check pull-right', t(:label_listing)), listing_room_path, class: "sidebar-link active" %>
   </li>
   <li class="sidebar-item<%= ' current' if action_name == 'pricing' %>">
-    <%= link_to t(:label_pricing), pricing_room_path, class: "sidebar-link active" %>
+    <%= link_to fa_icon(@room.price.blank? ? '' : 'fa fa-check pull-right', t(:label_pricing)), pricing_room_path, class: "sidebar-link active" %>
   </li>
   <li class="sidebar-item<%= ' current' if action_name == 'description' %>">
-    <%= link_to t(:label_description), description_room_path, class: "sidebar-link active" %>
+    <% need_icon = !@room.listing_name.blank? || !@room.summary.blank? %>
+    <%= link_to fa_icon(need_icon ? 'fa fa-check pull-right' : '', t(:label_description)), description_room_path, class: "sidebar-link active" %>
   </li>
-  <li class="sidebar-item<%= ' current' if action_name == 'photo_upload' %>">
-    <%= link_to t(:label_photo_upload), photo_upload_room_path, class: "sidebar-link active" %>
+  <li class="sidebar-item<%= ' current' if action_name == 'photo_upload' %>" id="room_sb_photo_link">
+    <%= link_to fa_icon(@room.photos.blank? ? '' : 'fa fa-check pull-right', t(:label_photo_upload)), photo_upload_room_path,
+                class: "sidebar-link active"%>
   </li>
   <li class="sidebar-item<%= ' current' if action_name == 'amenities' %>">
-    <%= link_to t(:label_amenities), amenities_room_path, class: "sidebar-link active" %>
+    <%= link_to fa_icon('fa fa-check pull-right', t(:label_amenities)), amenities_room_path, class: "sidebar-link active" %>
   </li>
   <li class="sidebar-item<%= ' current' if action_name == 'location' %>">
-    <%= link_to t(:label_location), location_room_path, class: "sidebar-link active" %>
+    <%= link_to fa_icon(@room.address.blank? ? '' : 'fa fa-check pull-right', t(:label_location)), location_room_path, class: "sidebar-link active" %>
   </li>
 </ul>
+<hr>
+
+<%= form_for @room   do |f| %>
+  <%= f.hidden_field :active, value: true %>
+  <div class="text-center">
+    <%= button_tag t(:label_submit), class: 'btn btn-normal', disabled: !@room.can_publish?, id: 'room_publish_btn' %>
+  </div>
+<% end %>

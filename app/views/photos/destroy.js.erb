@@ -1,1 +1,10 @@
+<% if @room.photos.blank?  %>
+  $('#room_sb_photo_link').html('<%= j link_to(t(:label_photo_upload), photo_upload_room_path, class: "sidebar-link active") %>');
+<% end %>
 $('#room_photo_<%= params[:id] %>').remove();
+
+<% if @room.can_publish? %>
+  $('#room_publish_btn').removeAttr('disabled');
+<% else %>
+  $('#room_publish_btn').attr('disabled', true);
+<% end %>

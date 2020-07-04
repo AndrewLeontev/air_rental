@@ -8,12 +8,13 @@ class PhotosController < ApplicationController
       end
 
       @photos = @room.photos
-      redirect_back(fallback_location: request.referer, notice: t(:label_save_successful))
+      @message = t(:label_save_successful)
     end
   end
 
   def destroy
     @photo = Photo.find(params[:id])
+    @room = @photo.room
 
     @photo.destroy
   end

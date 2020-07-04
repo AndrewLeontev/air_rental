@@ -58,3 +58,6 @@ ru:
   alert_dont_have_permissions: 'У вас недостаточно прав на это'
   label_select_photo: 'Выбрать фотографии'
   label_add_photos: 'Добавить фотографии'
+  label_submit: 'Опубликовать'
+  error_room_cant_be_publish: 'Нельзя опуликовать объявление, т.к. не настроены все опции.'
+  error_room_cant_be_publish_if_public: 'Объявление уже опубликовано'

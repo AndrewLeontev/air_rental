@@ -16,7 +16,7 @@ class RoomsController < ApplicationController
     if @room.save
       redirect_to listing_room_path(@room), notice: t(:label_save_successful)
     else
-      flash[:alert] =  t(:label_save_unsuccessful)
+      flash[:alert] =  @room.errors.any? ? @room.errors.full_messages.join('<br>').html_safe : t(:label_save_unsuccessful)
       render :new
     end
   end
@@ -47,7 +47,7 @@ class RoomsController < ApplicationController
     if @room.update(room_params)
       flash[:notice] =  t(:label_save_successful)
     else
-      flash[:alert] =  t(:label_save_unsuccessful)
+      flash[:alert] =  @room.errors.any? ? @room.errors.full_messages.join('<br>').html_safe : t(:label_save_unsuccessful)
     end
 
     redirect_back(fallback_location: request.referer)

@@ -9,4 +9,9 @@ environment.plugins.prepend('Provide',
     })
 )
 
+const aliasConfig = {
+  'jquery': 'jquery/src/jquery'
+};
+
+environment.config.set('resolve.alias', aliasConfig);
 module.exports = environment

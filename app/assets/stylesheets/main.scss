@@ -281,3 +281,21 @@ li.current  {
 .card-header.preview img {
   width: 100%;
 }
+
+.sidebar-item .ap-icon {
+  padding: 0 4px;
+}
+
+#preview p {
+  margin: 4px;
+}
+
+.img_upload_item {
+  position: absolute;
+  color: #ab6b3c;
+  right: 0;
+}
+
+.img_upload_item:hover {
+  color: #93453d;
+}

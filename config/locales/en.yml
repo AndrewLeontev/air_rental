@@ -56,3 +56,6 @@ en:
   alert_dont_have_permissions: "You don't have permission"
   label_select_photo: 'Select Photos'
   label_add_photos: 'Add Photos'
+  label_submit: 'Publish'
+  error_room_cant_be_publish: 'Oops! Some room options is not set up'
+  error_room_cant_be_publish_if_public: 'Room is already published'
