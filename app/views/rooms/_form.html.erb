@@ -4,35 +4,35 @@
     <div class="col-md-6 select">
       <div class="form-group">
         <label for="room_home_type"><%= t(:label_home_type) %></label>
-        <%= f.select :home_type, options_for_select([["Apartment", "Apartment"], ["House", "House"], ["Bed & Breakfast", "Bed & Breakfast"]], @room.home_type), prompt: '...', class: 'form-control' %>
+        <%= f.select :home_type, options_for_select([["Apartment", "Apartment"], ["House", "House"], ["Bed & Breakfast", "Bed & Breakfast"]], @room.home_type), include_blank: true, class: 'form-control' %>
       </div>
     </div>
 
     <div class="col-md-6 select">
       <div class="form-group">
         <label for="room_room_type"><%= t(:label_room_type) %></label>
-        <%= f.select :room_type, options_for_select([["Entire", "Entire"], ["Private", "Private"], ["Shared", "Shared"]], @room.room_type), prompt: '...', class: 'form-control' %>
+        <%= f.select :room_type, options_for_select([["Entire", "Entire"], ["Private", "Private"], ["Shared", "Shared"]], @room.room_type), include_blank: true, class: 'form-control' %>
       </div>
     </div>
 
     <div class="col-md-6 select">
       <div class="form-group">
         <label for="room_accommodate"><%= t(:label_accommodate) %></label>
-        <%= f.select :accommodate, options_for_select([["1", 1], ["2", 2], ["3", 3], ["4+", 4]], @room.accommodate), prompt: '...', class: 'form-control' %>
+        <%= f.select :accommodate, options_for_select([["1", 1], ["2", 2], ["3", 3], ["4+", 4]], @room.accommodate), include_blank: true, class: 'form-control' %>
       </div>
     </div>
 
     <div class="col-md-6 select">
       <div class="form-group">
         <label for="room_bedrooms"><%= t(:label_bedrooms) %></label>
-        <%= f.select :bed_room, options_for_select([["1", 1], ["2", 2], ["3", 3], ["4+", 4]], @room.bed_room), prompt: '...', class: 'form-control' %>
+        <%= f.select :bed_room, options_for_select([["1", 1], ["2", 2], ["3", 3], ["4+", 4]], @room.bed_room), include_blank: true, class: 'form-control' %>
       </div>
     </div>
 
     <div class="col-md-6 select">
       <div class="form-group">
         <label for="room_bathrooms"><%= t(:label_bathrooms) %></label>
-        <%= f.select :bath_room, options_for_select([["1", 1], ["2", 2], ["3", 3], ["4+", 4]], @room.bath_room), prompt: '...', class: 'form-control' %>
+        <%= f.select :bath_room, options_for_select([["1", 1], ["2", 2], ["3", 3], ["4+", 4]], @room.bath_room), include_blank: true, class: 'form-control' %>
       </div>
     </div>
 
@@ -47,3 +47,10 @@
   </div>
 
 <% end %>
+
+<script type="text/javascript" charset="utf-8">
+  $('select').select2({
+    placeholder: "",
+    allowClear: true
+  })
+</script>

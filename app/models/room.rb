@@ -2,6 +2,9 @@ class Room < ApplicationRecord
   belongs_to :user
   has_many :photos
 
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+
   validates_presence_of :home_type, :room_type, :accommodate, :bed_room, :bath_room
 
   validate :publish_params
@@ -11,11 +14,19 @@ class Room < ApplicationRecord
   end
 
   def publish_params
-    if self.active_was
+    if self.active_was && self.active_changed?
       self.errors.add(:base, I18n.t(:error_room_cant_be_publish_if_public))
     end
     if self.active_changed? && self.active && !self.active_was && !self.can_publish?(!self.active_was)
       self.errors.add(:base, I18n.t(:error_room_cant_be_publish))
+    end
+  end
+
+  def cover_photo(size)
+    if self.photos.any?
+      self.photos.first.image.url(size)
+    else
+      "blank.png"
     end
   end
 end

@@ -1,0 +1,136 @@
+<div class="row">
+  <div class="col-md-8">
+    <div class="row">
+      <div class="col-md-8">
+        <h1><%= @room.listing_name %></h1>
+        <%= @room.address %>
+      </div>
+      <div class="col-md-4 text-center">
+        <% if current_user.id == @room.user_id %>
+          <div>
+            <%= link_to fa_icon('fa fa-edit'), listing_room_path(@room), class: 'btn-icon', title: t(:label_edit) %>
+            <%= link_to fa_icon('fa fa-archive'), listing_room_path(@room), class: 'btn-icon', title: t(:label_archive) %>
+            <%= link_to fa_icon('fa fa-trash'), room_path(@room), method: :delete, class: 'btn-icon btn-icon-red ', data: { confirm: t(:label_confirmation) }, title: t(:label_destroy) %>
+          </div>
+        <% end %>
+        <%= image_tag avatar_url(@room.user), class: 'rounded-circle avatar-large', id: 'room_main_image' %> <br>
+        <%= @room.user.fullname %>
+      </div>
+    </div>
+    <hr>
+
+    <div class="text-babu">
+      <div class="row text-center row-space-1">
+        <div class="col-md-3">
+          <i class="fa fa-home fa-2x"></i>
+        </div>
+        <div class="col-md-3">
+          <i class="fa  fa-user-circle fa-2x"></i>
+        </div>
+        <div class="col-md-3">
+          <i class="fa fa-bed fa-2x"></i>
+        </div>
+        <div class="col-md-3">
+          <i class="fa fa-bath fa-2x"></i>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-md-3"><%= @room.home_type %></div>
+        <div class="col-md-3"><%= t(:label_pl_accommodate, count: @room.accommodate) %></div>
+        <div class="col-md-3"><%= t(:label_pl_bedrooms, count: @room.bed_room) %></div>
+        <div class="col-md-3"><%= t(:label_pl_bathrooms, count: @room.bath_room) %></div>
+      </div>
+    </div>
+    <hr>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h3><%= t(:label_summary) %></h3>
+        <p><%= @room.summary %></p>
+      </div>
+    </div>
+    <hr>
+
+
+    <div class="row">
+      <div class="col-md-3">
+        <h4><%= t(:label_amenities) %></h4>
+      </div>
+
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-6">
+            <ul class="amenities">
+              <li class="<%= 'text-line-through' unless @room.is_tv %>"><%= t(:label_is_tv) %></li>
+              <li class="<%= 'text-line-through' unless @room.is_kitchen %>"><%= t(:label_is_kitchen) %></li>
+              <li class="<%= 'text-line-through' unless @room.is_internet %>"><%= t(:label_is_internet) %></li>
+            </ul>
+          </div>
+
+          <div class="col-md-6">
+            <ul class="amenities">
+              <li class="<%= 'text-line-through' unless @room.is_heating %>"><%= t(:label_is_heating) %></li>
+              <li class="<%= 'text-line-through' unless @room.is_air %>"><%= t(:label_is_air) %></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+
+
+    <div class="row">
+      <%= render partial: 'shared/carousel', locals: { photos: @room.photos } %>
+    </div>
+    <hr>
+
+    <div class="row">
+      <div id="map"></div>
+
+      <script
+        src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['MAPS_API_KEY'] %>&callback=initMap&libraries=&v=weekly"
+        defer
+      ></script>
+      <script type="text/javascript" charset="utf-8">
+        function initMap() {
+          let location = {lat: <%= @room.latitude %>, lng: <%= @room.longitude %>}
+          let map = new google.maps.Map(document.getElementById('map'), {
+            center: location,
+            zoom: 14
+          });
+          let marker = new google.maps.Marker({
+            position: location,
+            map: map
+          })
+
+          let infoWindow = new google.maps.InfoWindow({
+            content: '<div id="content"><%= image_tag @room.cover_photo(:medium) %></div>'
+          })
+          infoWindow.open(map, marker)
+          google.maps.event.addDomListener(window, 'load', initMap)
+        }
+      </script>
+    </div>
+    <hr>
+
+    <div class="row">
+      <h3 class="col-md-12">Near by</h3>
+      <% @room.nearbys(10).each do |room| %>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-header preview">
+              <%= image_tag room.cover_photo(:medium) %>
+            </div>
+            <div class="card-body">
+              <%= link_to room.listing_name, room %> <br>
+              (<%= room.distance.round(2) %> kms away)
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+  </div>
+</div>

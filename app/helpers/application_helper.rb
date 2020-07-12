@@ -1,6 +1,6 @@
 module ApplicationHelper
   def fa_icon(icon='fa fa-flag', text='', opts={})
-    html = "<i class='#{icon}'></i> #{text}"
+    html = "<i class='#{icon}'></i>#{text}"
     html = "<span>#{html}</span>" if opts[:need_span]
     html.html_safe
   end

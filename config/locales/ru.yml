@@ -46,7 +46,7 @@ ru:
   label_location: 'Местоположение'
   label_save: 'Сохранить'
   label_address: 'Адресс'
-  label_summary: 'Краткое пояснение'
+  label_summary: 'Описание объявления'
   label_listing_name: 'Название'
   label_is_tv: 'Телевидение'
   label_is_kitchen: "Кухня"
@@ -61,3 +61,8 @@ ru:
   label_submit: 'Опубликовать'
   error_room_cant_be_publish: 'Нельзя опуликовать объявление, т.к. не настроены все опции.'
   error_room_cant_be_publish_if_public: 'Объявление уже опубликовано'
+  label_my_reservations: 'Зарезервированные'
+  label_listings: 'Объявления'
+  label_destroy: 'Удалить'
+  label_archive: 'В архив'
+  label_edit: 'Редактировать'

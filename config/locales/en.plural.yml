@@ -1,0 +1,19 @@
+en:
+  label_pl_accommodate:
+    zero: 'No accommodate'
+    one: '1 accommodate'
+    two: '2 accommodates'
+    few: '%{count} accommodates'
+    other: '%{count} accommodates'
+  label_pl_bedrooms:
+    zero: 'No bedrooms'
+    one: '1 bedroom'
+    two: '2 bedrooms'
+    few: '%{count} bedrooms'
+    other: '%{count} bedrooms'
+  label_pl_bathrooms:
+    zero: 'No bathroom'
+    one: '1 bathroom'
+    two: '2 bathrooms'
+    few: '%{count} bathrooms'
+    other: '%{count} bathrooms'

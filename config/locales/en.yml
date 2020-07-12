@@ -44,7 +44,7 @@ en:
   label_location: 'Location'
   label_save: 'Save'
   label_address: 'Address'
-  label_summary: 'Summary'
+  label_summary: 'About Listing'
   label_listing_name: 'Listing Name'
   label_is_tv: 'TV'
   label_is_kitchen: "Kitchen"
@@ -59,3 +59,8 @@ en:
   label_submit: 'Publish'
   error_room_cant_be_publish: 'Oops! Some room options is not set up'
   error_room_cant_be_publish_if_public: 'Room is already published'
+  label_my_reservations: 'My reservations'
+  label_listings: 'Listings'
+  label_destroy: 'Delete'
+  label_archive: 'In Archive'
+  label_edit: 'Edit'

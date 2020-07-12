@@ -1,0 +1,19 @@
+ru:
+  label_pl_accommodate:
+    zero: 'Без гостей'
+    one: '1 гость'
+    two: '2 гостя'
+    few: '%{count} гостя'
+    other: '%{count} гостей'
+  label_pl_bedrooms:
+    zero: 'Без спален'
+    one: '1 спальня'
+    two: '2 спальни'
+    few: '%{count} спальни'
+    other: '%{count} спален'
+  label_pl_bathrooms:
+    zero: 'Без ванной комнаты'
+    one: '1 ванная комната'
+    two: '2 ванной комнаты'
+    few: '%{count} ванной комнаты'
+    other: '%{count} ванная комната'
