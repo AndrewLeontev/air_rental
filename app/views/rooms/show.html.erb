@@ -114,7 +114,7 @@
     <hr>
 
     <div class="row">
-      <h3 class="col-md-12">Near by</h3>
+      <h3 class="col-md-12"><%= t(:label_room_near_by) %></h3>
       <% @room.nearbys(10).each do |room| %>
         <div class="col-md-4">
           <div class="card">
@@ -123,7 +123,7 @@
             </div>
             <div class="card-body">
               <%= link_to room.listing_name, room %> <br>
-              (<%= room.distance.round(2) %> kms away)
+              (<%= room.distance.round(2) %> <%= t(:label_room_distance_away) %>)
             </div>
           </div>
         </div>
@@ -132,5 +132,6 @@
   </div>
 
   <div class="col-md-4">
+    <%= render partial: 'reservations/form' %>
   </div>
 </div>

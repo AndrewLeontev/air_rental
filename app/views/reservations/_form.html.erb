@@ -1,0 +1,13 @@
+<%= form_for [@room, @room.reservations.new], html: { class: 'form' } do |f| %>
+  <%= f.hidden_field :room_id, value: @room.id %>
+  <%= f.hidden_field :price, value: @room.price %>
+
+  <div class="form-group">
+    <%= f.text_field  :start_date, class: 'form-control datepicker', placeholder: t(:label_start_date), autocomplete: 'off' %>
+    <%= f.text_field :end_date, class: 'form-control datepicker', placeholder: t(:label_end_date), autocomplete: 'off' %>
+  </div>
+
+  <div class="text-center">
+    <%= f.submit t(:btn_reservation_create), class: "btn btn-normal" %>
+  </div>
+<% end %>

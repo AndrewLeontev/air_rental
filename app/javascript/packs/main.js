@@ -1,7 +1,11 @@
-$(document).on('change', '#uploaded-file1', previewImages)
+$(document).ready(function() {
+  $(document).on('change', '#uploaded-file1', previewImages);
+
+  $(document.body).ready(() => $('.datepicker').datepicker({ dateFormat: 'dd-mm-yy', autocomplete: false }));
+})
+
 
 function previewImages() {
-
   let $preview = $('#preview').empty();
   if (this.files) $.each(this.files, readAndPreview);
 
@@ -23,8 +27,7 @@ function previewImages() {
   }
 }
 
-function createGuid()
-{
+function createGuid() {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
     var r = Math.random()*16|0, v = c === 'x' ? r : (r&0x3|0x8);
     return v.toString(16);
